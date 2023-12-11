@@ -1,0 +1,261 @@
+[
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Index",
+        "targetColumn": "index_number"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"Udemy course URL\",\"Instructor URL\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Intructor name",
+        "targetColumn": "instructor_name"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_DUPLICATES",
+      "Parameters": {
+        "sourceColumn": "instructor_name"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "LOWER_CASE",
+      "Parameters": {
+        "columnDataType": "string",
+        "sourceColumn": "instructor_name"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "SPLIT_COLUMN_MULTIPLE_DELIMITER",
+      "Parameters": {
+        "limit": "1",
+        "patternOptions": "[{\"pattern\":\"\\\\|\",\"includeInSplit\":true},{\"pattern\":\",\",\"includeInSplit\":true},{\"pattern\":\"\\\\(\",\"includeInSplit\":true},{\"pattern\":\"-\",\"includeInSplit\":true},{\"pattern\":\"•\",\"includeInSplit\":true},{\"pattern\":\" \\\\|\",\"includeInSplit\":true},{\"pattern\":\" \\\\(\",\"includeInSplit\":true}]",
+        "sourceColumn": "instructor_name"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"instructor_name_2\",\"instructor_name_3\",\"instructor_name_4\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "TOKENIZATION",
+      "Parameters": {
+        "customStopWords": "[]",
+        "delimiter": "_",
+        "expandContractions": "DISABLED",
+        "sourceColumn": "instructor_name_1",
+        "stemmingMode": "DISABLED",
+        "stopWordRemovalMode": "DISABLED",
+        "targetColumn": "instructor_name"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"instructor_name_1\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"instructor_name\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Instructor rating",
+        "targetColumn": "instructor_rating"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "CHANGE_DATA_TYPE",
+      "Parameters": {
+        "columnDataType": "decimal",
+        "sourceColumn": "instructor_rating"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "NUMBER_FORMAT",
+      "Parameters": {
+        "decimalPlaces": "1",
+        "numericDecimalSeparator": ".",
+        "numericFormatType": "DECIMAL_PRECISION",
+        "sourceColumn": "instructor_rating"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Number of reviews",
+        "targetColumn": "number_of_reviews"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "false",
+        "removeAllWhitespace": "false",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "false",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "true",
+        "sourceColumn": "number_of_reviews"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "CHANGE_DATA_TYPE",
+      "Parameters": {
+        "columnDataType": "integer",
+        "sourceColumn": "number_of_reviews"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Number of students",
+        "targetColumn": "number_of_students"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "false",
+        "removeAllWhitespace": "false",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "false",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "true",
+        "sourceColumn": "number_of_students"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "CHANGE_DATA_TYPE",
+      "Parameters": {
+        "columnDataType": "integer",
+        "sourceColumn": "number_of_students"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Number of courses",
+        "targetColumn": "number_of_courses"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "FILL_WITH_CUSTOM",
+      "Parameters": {
+        "columnDataType": "int",
+        "sourceColumn": "number_of_courses",
+        "value": "1"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"LinkedIN URL\",\"Youtube URL\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "instructor_rating",
+        "targetColumn": "instructor_rating_udemy"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "number_of_reviews",
+        "targetColumn": "number_of_reviews_udemy"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "number_of_students",
+        "targetColumn": "number_of_students_udemy"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "number_of_courses",
+        "targetColumn": "number_of_courses_udemy"
+      }
+    }
+  }
+]
