@@ -85,22 +85,21 @@ Furthermore, the creation of new columns, such as "average_reaction_count" and "
 ### Step 5: Data Lineage
 ![Alt text](Picture7.png)
  
-
 In the Udemy dataset journey, we started by bringing in the file from S3, made a dataset and a project. We then used data cleaning steps, checked the dataset profile, and saved the results to S3 after running the profile job.
 
-Concluding Perspectives on AWS Glue DataBrew 🌐👋
+## Concluding Perspectives on AWS Glue DataBrew 🌐👋
 In navigating AWS Glue DataBrew, it's evident that the platform stands out for its user-friendly design and automation prowess. The intuitive, no-code interface heralds a democratization of ETL processes, inviting diverse skill sets into the realm of data analytics. Its automated data profiling and lineage capabilities usher in a new era of insights, seamlessly connecting both technical and non-technical users. The streamlined workflow automation, with over 250 automated processes, not only expedites data preparation but also empowers users to focus on more strategic, analytical tasks. The incorporation of adaptive prescriptive suggestions adds a layer of efficiency, enhancing preprocessing workflows and contributing to a quicker time to benefit. While DataBrew excels in user accessibility and automation, its no-code philosophy may pose challenges for those seeking highly customized solutions, and the cloud-dependent nature could be a consideration for environments with potential connectivity constraints. Despite these considerations, DataBrew remains a potent tool for fostering collaboration, inclusivity, and productivity in the dynamic landscape of data analytics.
-
-
 
 ## Pricing 💰🔍
 The platform offers two distinct models, each catering to different aspects of your data workflow: DataBrew Interactive Sessions and DataBrew Jobs.
 
-### a.	 DataBrew Interactive Sessions: This model revolves around the interactive and hands-on aspect of data preparation. It charges based on the time you spend actively working within DataBrew during interactive sessions.
+### a.	 DataBrew Interactive Sessions: 
+This model revolves around the interactive and hands-on aspect of data preparation. It charges based on the time you spend actively working within DataBrew during interactive sessions.
 •	The cost per session is $1.00, billed in 30-minute intervals.
 •	Pricing Scenarios: For example, if you start a session at 9:00 AM and return from 9:20 AM–9:30 AM, one session is utilized, costing $1.00. Alternatively, starting a session at 9:00 AM, interacting until 9:50 AM, leaving, and returning at 10:15 AM would consume three sessions, resulting in a total charge of $3.00.
 
-### b.	DataBrew Jobs: DataBrew Jobs pricing is centered around the execution of jobs that automate data transformations based on predefined recipes. The charges are calculated based on the processing resources used during job execution.
+### b.	DataBrew Jobs: 
+DataBrew Jobs pricing is centered around the execution of jobs that automate data transformations based on predefined recipes. The charges are calculated based on the processing resources used during job execution.
 •	Hourly Rates for Nodes: Node utilization is costed at $0.48 per hour, meticulously calculated on a per-minute basis for precise billing.
 •	Additional Service Fees: Incorporating supplementary AWS services alongside DataBrew jobs may result in additional charges.
 •	Pricing Examples: For instance, if a DataBrew job runs for 10 minutes, utilizing 5 DataBrew nodes, the cost incurred would be $0.40.
@@ -110,6 +109,7 @@ In summary, AWS Glue DataBrew emerges as a catalyst in redefining data preparati
 
 🌐💡 #AWSDataBrew #DataPreparation #InnovationInAnalytics
 
+Published on medium: https://medium.com/@ruchikabalani7/unleashing-the-potential-of-data-transformation-with-aws-glue-databrew-5e260ecb461d
 
 
 
