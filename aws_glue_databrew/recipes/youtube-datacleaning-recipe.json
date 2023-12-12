@@ -1,0 +1,762 @@
+[
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Index",
+        "targetColumn": "index_number"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"Youtube Url\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Channel title",
+        "targetColumn": "channel_title"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_DUPLICATES",
+      "Parameters": {
+        "sourceColumn": "channel_title"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_MISSING",
+      "Parameters": {
+        "sourceColumn": "channel_title"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "LOWER_CASE",
+      "Parameters": {
+        "sourceColumn": "channel_title"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "TOKENIZATION",
+      "Parameters": {
+        "customStopWords": "[]",
+        "delimiter": "_",
+        "expandContractions": "DISABLED",
+        "sourceColumn": "channel_title",
+        "stemmingMode": "DISABLED",
+        "stopWordRemovalMode": "DISABLED",
+        "targetColumn": "channel_title_tokenized"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"channel_title\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "channel_title_tokenized",
+        "targetColumn": "channel_title"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"channel_title\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Susbscriber count",
+        "targetColumn": "susbscriber_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "customValue": "subscribers",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "false",
+        "removeAllWhitespace": "false",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "true",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "false",
+        "sourceColumn": "susbscriber_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "customValue": "subscriber",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "false",
+        "removeAllWhitespace": "false",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "true",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "false",
+        "sourceColumn": "susbscriber_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DUPLICATE",
+      "Parameters": {
+        "sourceColumn": "susbscriber_count",
+        "targetColumn": "susbscriber_count_copy"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REPLACE_WITH_CUSTOM",
+      "Parameters": {
+        "advancedDataType": "Not Found",
+        "columnDataType": "string",
+        "sourceColumn": "susbscriber_count_copy",
+        "value": "1000"
+      }
+    },
+    "ConditionExpressions": [
+      {
+        "Condition": "CONTAINS",
+        "Value": "K",
+        "TargetColumn": "susbscriber_count_copy"
+      }
+    ]
+  },
+  {
+    "Action": {
+      "Operation": "REPLACE_WITH_CUSTOM",
+      "Parameters": {
+        "advancedDataType": "Not Found",
+        "columnDataType": "string",
+        "sourceColumn": "susbscriber_count_copy",
+        "value": "1000000"
+      }
+    },
+    "ConditionExpressions": [
+      {
+        "Condition": "CONTAINS",
+        "Value": "M",
+        "TargetColumn": "susbscriber_count"
+      }
+    ]
+  },
+  {
+    "Action": {
+      "Operation": "REPLACE_WITH_CUSTOM",
+      "Parameters": {
+        "advancedDataType": "Not Found",
+        "columnDataType": "string",
+        "sourceColumn": "susbscriber_count_copy",
+        "value": "1"
+      }
+    },
+    "ConditionExpressions": [
+      {
+        "Condition": "NOT_CONTAINS",
+        "Value": "1000",
+        "TargetColumn": "susbscriber_count_copy"
+      }
+    ]
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "customValue": "K",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "false",
+        "removeAllWhitespace": "false",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "true",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "false",
+        "sourceColumn": "susbscriber_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "customValue": "M",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "false",
+        "removeAllWhitespace": "false",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "true",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "false",
+        "sourceColumn": "susbscriber_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_MISSING",
+      "Parameters": {
+        "sourceColumn": "susbscriber_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "CHANGE_DATA_TYPE",
+      "Parameters": {
+        "columnDataType": "float",
+        "sourceColumn": "susbscriber_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "NUMBER_FORMAT",
+      "Parameters": {
+        "decimalPlaces": "1",
+        "numericDecimalSeparator": ".",
+        "numericFormatType": "DECIMAL_PRECISION",
+        "sourceColumn": "susbscriber_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "CHANGE_DATA_TYPE",
+      "Parameters": {
+        "columnDataType": "integer",
+        "sourceColumn": "susbscriber_count_copy"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "MULTIPLY",
+      "Parameters": {
+        "functionStepType": "MULTIPLY",
+        "sourceColumn1": "susbscriber_count",
+        "sourceColumn2": "susbscriber_count_copy",
+        "targetColumn": "total_subscriber_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "NUMBER_FORMAT",
+      "Parameters": {
+        "decimalPlaces": "0",
+        "numericDecimalSeparator": ".",
+        "numericFormatType": "DECIMAL_PRECISION",
+        "sourceColumn": "total_subscriber_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"susbscriber_count\",\"susbscriber_count_copy\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Number of videos posted",
+        "targetColumn": "number_of_videos_posted"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "customValue": "videos",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "false",
+        "removeAllWhitespace": "false",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "true",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "false",
+        "sourceColumn": "number_of_videos_posted"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "customValue": "video",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "false",
+        "removeAllWhitespace": "false",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "true",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "false",
+        "sourceColumn": "number_of_videos_posted"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DUPLICATE",
+      "Parameters": {
+        "sourceColumn": "number_of_videos_posted",
+        "targetColumn": "number_of_videos_posted_copy"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REPLACE_WITH_CUSTOM",
+      "Parameters": {
+        "advancedDataType": "Not Found",
+        "columnDataType": "string",
+        "sourceColumn": "number_of_videos_posted_copy",
+        "value": "1"
+      }
+    },
+    "ConditionExpressions": [
+      {
+        "Condition": "NOT_CONTAINS",
+        "Value": "K",
+        "TargetColumn": "number_of_videos_posted_copy"
+      }
+    ]
+  },
+  {
+    "Action": {
+      "Operation": "REPLACE_WITH_CUSTOM",
+      "Parameters": {
+        "advancedDataType": "Not Found",
+        "columnDataType": "string",
+        "sourceColumn": "number_of_videos_posted_copy",
+        "value": "1000"
+      }
+    },
+    "ConditionExpressions": [
+      {
+        "Condition": "CONTAINS",
+        "Value": "K",
+        "TargetColumn": "number_of_videos_posted_copy"
+      }
+    ]
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "customValue": "K",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "false",
+        "removeAllWhitespace": "false",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "true",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "false",
+        "sourceColumn": "number_of_videos_posted"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "CHANGE_DATA_TYPE",
+      "Parameters": {
+        "columnDataType": "integer",
+        "sourceColumn": "number_of_videos_posted_copy"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "CHANGE_DATA_TYPE",
+      "Parameters": {
+        "columnDataType": "float",
+        "sourceColumn": "number_of_videos_posted"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "NUMBER_FORMAT",
+      "Parameters": {
+        "decimalPlaces": "1",
+        "numericDecimalSeparator": ".",
+        "numericFormatType": "DECIMAL_PRECISION",
+        "sourceColumn": "number_of_videos_posted"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "MULTIPLY",
+      "Parameters": {
+        "functionStepType": "MULTIPLY",
+        "sourceColumn1": "number_of_videos_posted",
+        "sourceColumn2": "number_of_videos_posted_copy",
+        "targetColumn": "total_videos_posted"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "CHANGE_DATA_TYPE",
+      "Parameters": {
+        "columnDataType": "integer",
+        "sourceColumn": "total_videos_posted"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"number_of_videos_posted\",\"number_of_videos_posted_copy\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Channedl created date",
+        "targetColumn": "channel_creation_date"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "SPLIT_COLUMN_SINGLE_DELIMITER",
+      "Parameters": {
+        "includeInSplit": "true",
+        "limit": "1",
+        "pattern": ",",
+        "sourceColumn": "channel_creation_date"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "SPLIT_COLUMN_FROM_START",
+      "Parameters": {
+        "position": "3",
+        "sourceColumn": "channel_creation_date_1"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "CATEGORICAL_MAPPING",
+      "Parameters": {
+        "categoryMap": "{\"Mar\":\"03\",\"Oct\":\"10\",\"Jan\":\"01\",\"Dec\":\"12\",\"May\":\"05\",\"Nov\":\"11\",\"Aug\":\"08\",\"Apr\":\"04\",\"Jun\":\"06\",\"Feb\":\"02\",\"Jul\":\"07\",\"Sep\":\"09\"}",
+        "deleteOtherRows": "false",
+        "keepOthers": "true",
+        "mapType": "TEXT",
+        "mappingOption": "ALL_VALUES",
+        "sourceColumn": "channel_creation_date_1_1",
+        "targetColumn": "channel_creation_date_1_1_mapped"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"channel_creation_date_1_1\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "channel_creation_date_1_1_mapped",
+        "targetColumn": "channel_creation_month"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "channel_creation_date_2",
+        "targetColumn": "channel_creation_year"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "channel_creation_date_1_2",
+        "targetColumn": "channel_creation_date"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "CATEGORICAL_MAPPING",
+      "Parameters": {
+        "categoryMap": "{\"1\":\"01\",\"2\":\"02\",\"3\":\"03\",\"4\":\"04\",\"5\":\"05\",\"6\":\"06\",\"7\":\"07\",\"8\":\"08\",\"9\":\"09\"}",
+        "deleteOtherRows": "false",
+        "keepOthers": "true",
+        "mapType": "TEXT",
+        "mappingOption": "CUSTOM_VALUES",
+        "sourceColumn": "channel_creation_date",
+        "targetColumn": "channel_creation_date_mapped"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "FORMAT_DATE",
+      "Parameters": {
+        "sourceColumn": "channel_creation_date",
+        "targetDateFormat": "yyyy-mm-dd"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "MERGE",
+      "Parameters": {
+        "delimiter": "-",
+        "sourceColumns": "[\"channel_creation_year\",\"channel_creation_month\",\"channel_creation_date_mapped\"]",
+        "targetColumn": "channel_creation_date"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"channel_creation_date\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Overalll view count for the channel",
+        "targetColumn": "channel_average_view_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "false",
+        "removeAllWhitespace": "false",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "false",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "true",
+        "sourceColumn": "channel_average_view_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_MISSING",
+      "Parameters": {
+        "sourceColumn": "channel_average_view_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "CHANGE_DATA_TYPE",
+      "Parameters": {
+        "columnDataType": "integer",
+        "sourceColumn": "channel_average_view_count"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Channel description",
+        "targetColumn": "channel_description"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"channel_description\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Number of comments for featured video",
+        "targetColumn": "number_of_comments_featured_video"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "FILL_WITH_CUSTOM",
+      "Parameters": {
+        "columnDataType": "int",
+        "sourceColumn": "number_of_comments_featured_video",
+        "value": "0"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "CHANGE_DATA_TYPE",
+      "Parameters": {
+        "columnDataType": "integer",
+        "sourceColumn": "number_of_comments_featured_video"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "Featured Video Comment",
+        "targetColumn": "featured_video_comment"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "SPLIT_COLUMN_SINGLE_DELIMITER",
+      "Parameters": {
+        "includeInSplit": "true",
+        "limit": "19",
+        "pattern": "\\|@~~@\\|",
+        "sourceColumn": "featured_video_comment"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "total_subscriber_count",
+        "targetColumn": "subscriber_count_youtube"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "total_videos_posted",
+        "targetColumn": "videos_posted_count_youtube"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "channel_average_view_count",
+        "targetColumn": "channel_average_view_count_youtube"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "RENAME",
+      "Parameters": {
+        "sourceColumn": "number_of_comments_featured_video",
+        "targetColumn": "featured_video_comments_count_youtube"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"featured_video_comment_1\",\"featured_video_comment_2\",\"featured_video_comment_3\",\"featured_video_comment_4\",\"featured_video_comment_5\",\"featured_video_comment_6\",\"featured_video_comment_7\",\"featured_video_comment_8\",\"featured_video_comment_9\",\"featured_video_comment_10\",\"featured_video_comment_11\",\"featured_video_comment_12\",\"featured_video_comment_13\",\"featured_video_comment_14\",\"featured_video_comment_15\",\"featured_video_comment_16\",\"featured_video_comment_17\",\"featured_video_comment_18\",\"featured_video_comment_19\",\"featured_video_comment_20\"]"
+      }
+    }
+  }
+]
